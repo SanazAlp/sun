@@ -1,0 +1,258 @@
+@import '@fontsource/fira-mono';
+
+:root {
+	--font-body: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-mono: 'Fira Mono', monospace;
+
+	--column-width: 42rem;
+	--column-margin-top: 4rem;
+
+	--red-brown-25: #f9f5f4;
+	--red-brown-50: #ece7e6;
+	--red-brown-100: #dacfcd;
+	--red-brown-200: #e0d6d4;
+	--red-brown-300: #b59e9c;
+	--red-brown-400: #6a3d39;
+	--red-brown-500: #450d07;
+	--red-brown-600: #370a06;
+	--red-brown-700: #290804;
+	--red-brown-800: #1c0503;
+	--red-brown-900: #150402;
+	--red-brown-950: #0e0301;
+	--riddle-brown: #4f250c;
+
+	--orange-25: #f9f1eb;
+	--orange-50: #f3e4d6;
+	--orange-100: #edd6c2;
+	--orange-200: #e7c9ae;
+	--orange-300: #dbae85;
+	--orange-400: #cf935d;
+	--orange-500: #c37834;
+	--orange-600: #9c602a;
+	--orange-700: #75481f;
+	--orange-800: #4e3015;
+	--orange-900: #3a2410;
+	--orange-950: #27180a;
+
+	--gold-25: #fcf7ed;
+	--gold-50: #f9efdb;
+	--gold-100: #f6e7c9;
+	--gold-200: #f3dfb7;
+	--gold-300: #eed094;
+	--gold-400: #e8c070;
+	--gold-500: #e2b04c;
+	--gold-600: #b58d3d;
+	--gold-700: #886a2e;
+	--gold-800: #5a461e;
+	--gold-900: #443517;
+	--gold-950: #2d230f;
+
+	font-family: var(--font-body);
+	color: var(--orange-300);
+	background: var(--red-brown-800);
+
+	font-size: 16px;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+}
+
+span,
+a {
+	color: var(--orange-400) !important;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 3rem;
+	color: var(--gold-400);
+	font-weight: bolder !important;
+}
+
+h2 {
+	font-size: 2.2rem;
+	color: var(--gold-400);
+	font-weight: bold !important;
+}
+
+h3 {
+	font-size: medium;
+	color: var(--orange-500);
+	margin-bottom: 1rem;
+}
+
+p {
+	font-size: 1rem;
+}
+
+.text-column {
+	display: flex;
+	max-width: 48rem;
+	flex: 0.6;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+input,
+button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
+}
+
+button:hover {
+	opacity: 60% !important;
+}
+
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+nav {
+	background-color: var(--color-bg) !important;
+}
+
+button {
+	background-color: var(--color-theme);
+}
+button:hover {
+	opacity: 20%;
+}
+
+ul {
+	background-color: var(--primary-400) !important;
+	border: 0;
+}
+
+li:hover a {
+	text-decoration: none !important;
+	background-color: var(--primary-100) !important;
+}
+
+.shrinked {
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	max-width: 80rem;
+	width: 100%;
+}
+
+label {
+	color: var(--orange-400);
+	opacity: 50%;
+	margin-top: 1rem;
+}
+
+textarea,
+input {
+	background-color: transparent !important;
+	border-width: 0px !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: var(--orange-400) !important;
+}
+
+button path {
+	color: var(--gold-600);
+}
+
+section {
+	position: relative;
+	z-index: 1;
+}
+
+.blur-container {
+	--blur: 150px;
+	filter: blur(var(--blur));
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: -1;
+	overflow: hidden;
+}
+
+.shape {
+	margin: 0 auto;
+	aspect-ratio: 1;
+	position: relative;
+
+	--width: 100%;
+	--scale: 1;
+	--opacity: 0.1;
+	--top: 0;
+	--left: 0;
+	--path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+	--background: #e8c070;
+
+	clip-path: var(--path);
+	background: var(--background);
+	scale: var(--scale);
+	opacity: var(--opacity);
+	width: var(--width);
+	top: var(--top);
+	left: var(--left);
+
+	mix-blend-mode: difference;
+	transform: translateZ(0);
+}
+.dark {
+	background-color: var(--red-brown-900);
+	padding: 30px 0px 30px 0px;
+}
+@media (min-width: 768px) {
+	.dark {
+		padding: 50px 0px 50px 0px;
+	}
+}
+.light {
+	padding: 30px 0px 30px 0px;
+}
+@media (min-width: 768px) {
+	.light {
+		padding: 50px 0px 50px 0px;
+	}
+}
+.date {
+	color: var(--orange-500);
+	font-size: 0.8rem;
+}
+.title {
+	color: var(--gold-400);
+	font-weight: bold;
+	margin-bottom: 0.3rem;
+}
